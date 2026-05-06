@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <base href="/" />
+    <meta charset="UTF-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta
+      name="description"
+      content="Flutter Profile Application - A beautiful and functional profile showcase"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- iOS meta tags & icons -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Flutter Profile" />
+    <link rel="apple-touch-icon" href="icons/Icon-192.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <!-- Meta tags for social media -->
+    <meta property="og:title" content="Flutter Profile Application" />
+    <meta
+      property="og:description"
+      content="A beautiful Flutter profile showcase with responsive design"
+    />
+    <meta property="og:image" content="favicon.png" />
+    <meta name="theme-color" content="#1976D2" />
+
+    <title>Flutter Profile</title>
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Loading style -->
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #loading {
+        text-align: center;
+        color: white;
+      }
+
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top-color: white;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 20px;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loading">
+      <div class="spinner"></div>
+      <p>Loading Flutter Profile...</p>
+    </div>
+
+    <script src="flutter_bootstrap.js" async></script>
+    <script>
+      // Hide loading spinner when Flutter is ready
+      window.addEventListener("flutter-web-ready", function () {
+        var loading = document.getElementById("loading");
+        if (loading) {
+          loading.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
